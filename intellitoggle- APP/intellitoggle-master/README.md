@@ -1,4 +1,6 @@
-# Frontend Developer Assignment — Nuxt 3 Home Page
+# INTELLITOGGLE-FRONTEND
+ From:JAMES
+ Submitted to:JEREMY
 
 This project is a recreation of the provided **Figma home page design** using **Nuxt 3, Vue 3, and Tailwind CSS**.  
 The goal is to match the design as closely as possible, ensure responsiveness, and validate layout fidelity using **Pixelay**.
