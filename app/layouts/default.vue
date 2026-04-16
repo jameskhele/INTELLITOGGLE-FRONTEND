@@ -1,115 +1,94 @@
 <template>
-  <nav
-    class="bg-[#42389E] py-6 px-4 md:py-8 md:px-12 lg:py-10 lg:px-24 xl:px-[120px] flex flex-wrap justify-between items-center gap-4">
-    <div class="flex-shrink-0">
-      <img src="~/assets/images/intellitoggle.png" alt="Intellitoggle Logo"
-        class="w-32 h-8 sm:w-40 sm:h-10 md:w-[205.5px] md:h-[50.8px]">
-    </div>
+  <div class="min-h-screen bg-[#F6F5FC] text-[#181B42]">
+    <nav class="w-full bg-[#4338A6] px-4 py-4 md:px-8 md:py-5">
+      <div class="mx-auto flex w-full max-w-[1240px] items-center justify-between rounded-[5px] bg-[#4338A6]">
+        <NuxtLink to="/" class="flex items-center gap-3">
+          <img src="~/assets/images/intellitoggle.png" alt="IntelliToggle" class="h-[28px] w-auto md:h-[34px]" />
+        </NuxtLink>
 
-    <button class="md:hidden text-white p-2" @click="mobileMenuOpen = !mobileMenuOpen">
-      <img src="~/assets/images/menu.png" alt="Menu icon" class="w-6 h-6">
-    </button>
+        <button class="rounded-md p-2 text-white md:hidden" @click="mobileMenuOpen = !mobileMenuOpen">
+          <img src="~/assets/images/menu.png" alt="Menu" class="h-6 w-6" />
+        </button>
 
-    <div class="hidden md:flex">
-      <ul class="flex items-center gap-4 lg:gap-[27px] text-white text-sm lg:text-base">
-        <li>
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/about">About</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/pricing">Pricing</NuxtLink>
-        </li>
-      </ul>
-    </div>
+        <div class="hidden items-center gap-8 md:flex">
+          <NuxtLink class="text-[12px] font-medium text-white" to="/">Home</NuxtLink>
+          <NuxtLink class="text-[12px] font-medium text-white/95" to="/about">About</NuxtLink>
+          <NuxtLink class="text-[12px] font-medium text-white/95" to="/pricing">Pricing</NuxtLink>
+        </div>
 
-    <div class="hidden md:block">
-      <button
-        class="bg-[#F9A71E] px-4 py-2 lg:px-6 lg:py-3 rounded-lg text-[#0F1026] font-semibold text-sm lg:text-base">Start
-        Sandbox</button>
-    </div>
+        <button class="hidden rounded-[6px] bg-[#F9A71E] px-5 py-2 text-[14px] font-semibold text-[#0E1030] md:block">
+          Start Sandbox
+        </button>
+      </div>
 
-    <div v-if="mobileMenuOpen" class="w-full md:hidden mt-4">
-      <ul class="flex flex-col gap-4 text-white">
-        <li>
+      <div v-if="mobileMenuOpen" class="mx-auto mt-4 w-full max-w-[1240px] rounded-lg bg-[#3D3398] p-4 md:hidden">
+        <div class="flex flex-col gap-3 text-white">
           <NuxtLink to="/" @click="mobileMenuOpen = false">Home</NuxtLink>
-        </li>
-        <li>
           <NuxtLink to="/about" @click="mobileMenuOpen = false">About</NuxtLink>
-        </li>
-        <li>
           <NuxtLink to="/pricing" @click="mobileMenuOpen = false">Pricing</NuxtLink>
-        </li>
-        <li><button class="bg-[#F9A71E] px-6 py-3 rounded-lg text-[#0F1026] font-semibold w-full md:w-[214px]">Start Sandbox</button>
-        </li>
-      </ul>
-    </div>
-  </nav>
+          <button class="mt-2 rounded-[6px] bg-[#F9A71E] px-5 py-2 text-sm font-semibold text-[#0E1030]">Start Sandbox</button>
+        </div>
+      </div>
+    </nav>
 
-  <div>
     <slot />
+
+    <footer class="bg-[#ECEBF5] px-4 pb-10 pt-8 md:px-8 md:pb-14 md:pt-10">
+      <div class="mx-auto w-full max-w-[1240px]">
+        <section class="mb-10 rounded-[12px] bg-[url('~/assets/images/bgpattern.png')] bg-cover bg-center px-6 py-8 text-center text-white md:px-8 md:py-10">
+          <h2 class="mx-auto max-w-2xl text-2xl font-semibold leading-tight md:text-[40px]">
+            Launch Features Confidently With AI Driven Feature Flags
+          </h2>
+          <p class="mt-2 text-sm text-white/85 md:text-base">Start for free, scale as your team grows</p>
+          <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+            <button class="rounded-[6px] bg-[#F9A71E] px-7 py-2.5 text-sm font-semibold text-[#101333]">Start for $1/mo</button>
+            <button class="rounded-[6px] border border-[#F9A71E] px-7 py-2.5 text-sm font-semibold text-[#F9A71E]">Join AI Early Access</button>
+          </div>
+        </section>
+
+        <section class="grid grid-cols-1 gap-8 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+          <div>
+            <img src="~/assets/images/intellitogggle_footer.png" alt="IntelliToggle" class="mb-4 h-11 w-auto" />
+            <p class="max-w-[280px] text-[12px] leading-5 text-[#5B5D6B]">
+              IntelliToggle is built by AORTEM, a company focused on powering scalable, multi-platform developer tools.
+            </p>
+            <img src="~/assets/images/github.png" alt="GitHub" class="mt-4 h-5 w-5" />
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-[11px] font-semibold text-[#5C5E6D]">Company</h3>
+            <ul class="space-y-2 text-[12px] font-medium text-[#202449]">
+              <li>Pricing</li>
+              <li>Documentation</li>
+              <li>About Us</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-[11px] font-semibold text-[#5C5E6D]">Resources</h3>
+            <ul class="space-y-2 text-[12px] font-medium text-[#202449]">
+              <li>Why IntelliToggle is different</li>
+              <li>Customer Support</li>
+              <li>Terms & Conditions</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-3 text-[11px] font-semibold text-[#202449]">Subscribe to Newsletter</h3>
+            <div class="flex overflow-hidden rounded-[4px] border border-[#D5D7E6] bg-white">
+              <input type="email" placeholder="Enter email address" class="w-full px-3 py-2 text-[10px] outline-none placeholder:text-[#A2A4B2]" />
+              <button class="bg-[#F9A71E] px-5 text-[10px] font-semibold text-[#101333]">Join</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
   </div>
-
-  <!-- Footer -->
-  <footer class="bg-[#ECEBF5] px-4 py-12 md:px-12 md:py-16 lg:px-24 lg:py-20 xl:px-[120px]">
-    <div class="flex flex-col lg:flex-row justify-between gap-8 lg:gap-12">
-      <div class="max-w-full lg:max-w-[300px]">
-        <div class="mb-5">
-          <img src="~/assets/images/intellitogggle_footer.png" alt="Intellitoggle Logo"
-            class="w-36 h-11 md:w-[170.5px] md:h-[50.8px]">
-        </div>
-        <p class="text-[#4A4B4D] text-sm mb-4">
-          IntelliToggle is built by AORTEM, a company focused on powering scalable, multi-platform developer tools.
-        </p>
-        <div>
-          <img src="~/assets/images/github.png" alt="Intellitoggle Logo"
-            class="w-[30px] h-[30px]">
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-8 sm:gap-12 lg:gap-[118px]">
-        <div>
-          <h2 class="text-[#5F5F60] mb-4 lg:mb-6 font-semibold">Resources</h2>
-          <ul class="font-semibold text-[#323338] space-y-3 lg:space-y-4 text-sm lg:text-base">
-            <li class="cursor-pointer">Why Intellitoggle is different</li>
-            <li class="cursor-pointer">Customer Support</li>
-            <li class="cursor-pointer">Terms & Conditions</li>
-            <li class="cursor-pointer">Privacy Policy</li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-[#5F5F60] mb-4 lg:mb-6 font-semibold">Company</h2>
-          <ul class="font-semibold text-[#323338] space-y-3 lg:space-y-4 text-sm lg:text-base">
-            <li class="cursor-pointer">Pricing</li>
-            <li class="cursor-pointer">Documentation</li>
-            <li class="cursor-pointer">About Us</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="w-full lg:w-auto">
-        <h1 class="text-[#323338] mb-4 lg:mb-6 font-semibold">Newsletter</h1>
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center">
-          <input type="text" placeholder="Enter email address"
-            class="py-3 px-4 rounded-lg sm:rounded-l-lg sm:rounded-r-none placeholder:text-sm flex-1 min-w-0">
-          <button
-            class="bg-[#F9A71E] px-6 py-3 rounded-lg sm:rounded-l-none sm:rounded-r-lg text-[#0F1026] font-semibold whitespace-nowrap">
-            Subscribe to Newsletter
-          </button>
-        </div>
-      </div>
-    </div>
-  </footer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+
 const mobileMenuOpen = ref(false)
 </script>
-
-<style scoped>
-.router-link-exact-active {
-  font-weight: bold;
-}
-</style>
